@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Lingua — Translator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Lingua home">
+        <span class="brand-mark" aria-hidden="true">文</span>
+        <span>lingua<span class="brand-dot">.</span></span>
+      </a>
+      <span class="topbar-note"><span class="status-dot"></span> Your words, understood</span>
+    </header>
+
+    <section class="hero" aria-labelledby="page-title">
+      <div class="eyebrow"><span class="eyebrow-line"></span> LANGUAGE WITHOUT LIMITS</div>
+      <h1 id="page-title">Every word,<br><span>another world.</span></h1>
+      <p class="hero-copy">Translate naturally between languages and make every conversation feel closer.</p>
+    </section>
+
+    <section class="translator" aria-label="Translator">
+      <div class="language-bar">
+        <label class="language-select">
+          <span class="select-caption">TRANSLATE FROM</span>
+          <select id="source-language" aria-label="Translate from"></select>
+        </label>
+        <button class="swap-button" id="swap-languages" type="button" aria-label="Swap languages" title="Swap languages">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h13m0 0-4-4m4 4-4 4M17 17H4m0 0 4 4m-4-4 4-4"/></svg>
+        </button>
+        <label class="language-select target-select">
+          <span class="select-caption">TRANSLATE TO</span>
+          <select id="target-language" aria-label="Translate to"></select>
+        </label>
+      </div>
+
+      <div class="text-panels">
+        <div class="text-panel input-panel">
+          <textarea id="source-text" maxlength="5000" placeholder="Type or paste your text here..." aria-label="Text to translate"></textarea>
+          <div class="panel-footer">
+            <span class="char-count" id="char-count">0 / 5000</span>
+            <button class="icon-button" id="clear-text" type="button" aria-label="Clear text" title="Clear text">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6m4-6v6M5 7l1 13h12l1-13M9 7V4h6v3"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="text-panel output-panel" aria-live="polite">
+          <div id="translated-text" class="translated-text placeholder-text">Your translation will appear here.</div>
+          <div class="panel-footer output-footer">
+            <span id="translation-status" class="translation-status">Ready to translate</span>
+            <button class="icon-button" id="copy-translation" type="button" aria-label="Copy translation" title="Copy translation" disabled>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-row">
+        <span class="provider-note"><span class="sparkle" aria-hidden="true">✦</span> Powered by online translation services</span>
+        <button class="translate-button" id="translate-button" type="button">
+          <span>Translate</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <span>Made for curious minds.</span>
+      <span>Translation is better when we understand each other.</span>
+    </footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
